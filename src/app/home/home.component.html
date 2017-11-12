@@ -1,24 +1,29 @@
 <div class="container color-dark">
 <div class="col">
-  <p>Add a bucket</p>
+  <p>Add a bucket list Item</p>
+</div>
+<div class="col">
+  <p>Your bucket list({{ itemCount }})</p>
 </div>
 
 </div>
+
 <div class="container color-light">
   <div class="col">
     <p class="sm">
-      Add some information in bucket
+     Use this form to Add some information in bucket 
     </p>
+    <form >
+      <input type="text" class="txt" name="item" placeholder="your goals..."  [(ngModel)]="goalText" >
+      <input type="submit" class="btn" (click)="addItem()" [value]="btnText">
+    </form>
+    
   </div>
+
+  <div class="col">
+    <p class="life-container" *ngFor="let goal of goals" (click)="removeItem(goal)">
+    {{goal}}
+    </p>
+    </div>
 </div>
 
-<form >
-  <input type="text" class="font" name="item" placeholder="your goals...">
-  <input type="submit" class="btn" value="Add Item">
-</form>
-
-<div class="col">
-<p class="lite-container">
-Now item will be added in this bucket
-</p>
-</div>
