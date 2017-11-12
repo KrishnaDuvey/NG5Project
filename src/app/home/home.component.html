@@ -8,7 +8,7 @@
 
 </div>
 
-<div class="container color-light">
+<div class="container color-light" [@goals]="goals.length">
   <div class="col">
     <p class="sm">
      Use this form to Add some information in bucket 
@@ -21,7 +21,8 @@
   </div>
 
   <div class="col">
-    <p class="life-container" *ngFor="let goal of goals" (click)="removeItem(goal)">
+    <span>click on msg to remove </span>
+    <p class="life-container" *ngFor="let goal of goals; let i=index" (click)="removeItem(i)">
     {{goal}}
     </p>
     </div>
